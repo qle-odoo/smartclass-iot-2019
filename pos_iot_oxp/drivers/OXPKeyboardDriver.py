@@ -24,6 +24,10 @@ class OXPKeyboardDriver(Driver):
                     return True
         return False
 
+    def action(self, data):
+        if data.get('action') == 'change_led_status':
+            self._change_led_status()
+
     def run(self):
         for event in self._input_device.read_loop():
             if event.type == evdev.ecodes.EV_KEY:
@@ -31,6 +35,10 @@ class OXPKeyboardDriver(Driver):
                 if data.keystate:
                     self.data['value'] = data.keycode.replace('KEY_', '')
                     event_manager.device_changed(self)
+
+    def _change_led_status(self):
+        led_status = 0 in self._input_device.leds()
+        self._input_device.set_led(evdev.ecodes.LED_NUML, int(not led_status))
 
     def _get_evdev_device(self):
         for device in [evdev.InputDevice(path) for path in reversed(evdev.list_devices())]:
