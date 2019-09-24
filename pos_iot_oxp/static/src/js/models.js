@@ -17,4 +17,27 @@ models.load_models({
         }
     },
 });
+
+var posmodel_super = models.PosModel.prototype;
+models.PosModel = models.PosModel.extend({
+    after_load_server_data: function () {
+        var self = this;
+        return posmodel_super.after_load_server_data.apply(this, arguments).then(function () {
+            self.iot_device_proxies.keyboard.add_listener(self._onKeyPressed.bind(self));
+        });
+    },
+
+    _onKeyPressed: function (data) {
+        var input = $('.searchbox input')[0];
+        if (input) {
+            input.dispatchEvent(new KeyboardEvent("keypress", {char : data.value}));
+            if (data.value == "BACKSPACE") {
+                input.value = input.value.slice(0,-1);
+            } else {
+                input.value += data.value;
+            }
+            input.dispatchEvent(new KeyboardEvent("keyup", {char : data.value}));
+        }
+    }
+});
 });
