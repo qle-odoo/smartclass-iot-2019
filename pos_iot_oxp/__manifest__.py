@@ -10,6 +10,10 @@
     'description': """
 Connect a keyboard to your IoT Box and use it in your Point of Sale to search products.
 """,
+    'data': [
+        'views/point_of_sale_assets.xml',
+        'views/pos_config_views.xml',
+    ],
     'depends': ['pos_iot'],
     'installable': True,
     'auto_install': True,
