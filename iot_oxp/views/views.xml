@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="iot_oxp.list">
+      <field name="name">iot_oxp list</field>
+      <field name="model">iot_oxp.iot_oxp</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="iot_oxp.action_window">
+      <field name="name">iot_oxp window</field>
+      <field name="res_model">iot_oxp.iot_oxp</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="iot_oxp.action_server">
+      <field name="name">iot_oxp server</field>
+      <field name="model_id" ref="model_iot_oxp_iot_oxp"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="iot_oxp" id="iot_oxp.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="iot_oxp.menu_1" parent="iot_oxp.menu_root"/>
+    <menuitem name="Menu 2" id="iot_oxp.menu_2" parent="iot_oxp.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="iot_oxp.menu_1_list" parent="iot_oxp.menu_1"
+              action="iot_oxp.action_window"/>
+    <menuitem name="Server to list" id="iot_oxp" parent="iot_oxp.menu_2"
+              action="iot_oxp.action_server"/>
+    -->
+  </data>
+</odoo>
