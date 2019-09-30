@@ -1,10 +1,11 @@
 {
-    'name': 'pos_iot_exp',
-    'vesrion': '1.1',
-    'sequence': 0,
-    'summary': 'Odoo XP IOT demo',
-    'description': 'Odoo IOT config',
+    'name': 'pos_iot_oxp',
+    'version': '1.0',
+    'category': 'Point of Sale',
+    'sequence': 6,
+    'summary': '',
+    'description': '',
     'depends': ['pos_iot'],
-    'data': ['views/pos_config_view.xml'],
+    'data': ['views/pos_config_views.xml'],
     'installable': True,
 }
