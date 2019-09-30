@@ -10,7 +10,7 @@ class OXPKeyboardDriver(Driver):
         self._device_type = 'keyboard'
         self._device_connection = 'direct'
         self._device_name = 'USB Keyboard'
-        self._input_device =  self.get_evdev_device()
+        self._input_device =  self._get_evdev_device()
 
     @classmethod
     def supported(cls, device):
