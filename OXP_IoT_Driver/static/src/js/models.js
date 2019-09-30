@@ -21,4 +21,18 @@ models.load_models({
   },
 });
 
+var posmodel_super = models.PosModel.prototype;
+models.PosModel = models.PosModel.extend({
+  after_load_server_data: function(){
+    return posmodel_super.after_load_server_data.apply(this, arguments).then(function(){
+      self.keyboard.add_listener(self._onKeyPressed.bind(self));
+    });
+  },
+
+  _onKeyPressed: function(data){
+    console.log(data.value);
+  }
+
+)};
+
 });
