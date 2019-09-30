@@ -18,16 +18,16 @@ class OXPKeyboardDriver(Driver):
             for itf in cfg:
                 return itf.bInterfaceClass == 3 and itf.bInterfaceProtocol == 1
 
-     def _get_evdev_device(self):
-         for path in reversed(evdev.list_devices()):
-             device = evdev.InputDevice(path)
-             if self.dev.idVendor == device.info.vendor and self.dev.idProduct == device.info.product:
-                 return device
+    def _get_evdev_device(self):
+        for path in reversed(evdev.list_devices()):
+            device = evdev.InputDevice(path)
+            if self.dev.idVendor == device.info.vendor and self.dev.idProduct == device.info.product:
+                return device
 
-     def run(self):
-         for event in self._input_device.read_loop():
-             if event.type == evdev.ecodes.EV_KEY:
-                 data = evdev.categorize(event)
-                 if data.keystate:
-                     self.data['value'] = data.keycode.replace('KEY_', '')
-                     event_manager.device_changed(self)
+    def run(self):
+        for event in self._input_device.read_loop():
+            if event.type == evdev.ecodes.EV_KEY:
+                data = evdev.categorize(event)
+                if data.keystate:
+                    self.data['value'] = data.keycode.replace('KEY_', '')
+                    event_manager.device_changed(self)
