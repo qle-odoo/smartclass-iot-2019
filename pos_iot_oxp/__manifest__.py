@@ -11,6 +11,9 @@
     'description': """
 
 """,
+    'data': [
+        'views/pos_config_views.xml',
+    ],
     'depends': ['pos_iot'],
     'installable': True,
 }
