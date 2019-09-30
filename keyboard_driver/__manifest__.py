@@ -5,8 +5,6 @@
     'summary': 'Odoo XP IOT demo',
     'description': 'Odoo IOT config',
     'depends': ['pos_iot'],
-    'data': [
-        'views/pos_config_view.xml'
-    ],
-    'installable': True
+    'data': ['views/pos_config_view.xml'],
+    'installable': True,
 }
