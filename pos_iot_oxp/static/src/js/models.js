@@ -2,6 +2,7 @@ odoo.define('pos_iot_oxp.models', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');
+var DeviceProxy = require('iot.widgets').DeviceProxy;
 
 models.load_models({
    model: 'iot_device',
@@ -26,8 +27,8 @@ models.PosModel = models.PosModel.extend({
         var self = this;
         return posmodel_super.after_load_server_data.apply(this, arguments)
             .then(function() {
-            self.keyboard.add_listener(self._onKeyPressed.bind(self));
-        })
-    }
+            self.iot_device_proxies.keyboard.add_listener(self._onKeyPressed.bind(self));
+        });
+    },
     });
 });
