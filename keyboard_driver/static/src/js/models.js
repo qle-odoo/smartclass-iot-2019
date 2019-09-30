@@ -21,4 +21,16 @@ odoo.define('pos_iot_oxp_models', function(require){
             }
         }
     })
+
+    var posmodel_super = models.PosModel.prototype;
+    models.PosModel = models.PosModel.extend({
+        after_load_server_data: function() {
+            posmodel_super.after_load_server_data.apply(this, arguments).then(function(){
+                self.keyboard.add_listener()
+            })
+        },
+        _onKeyPressed: function(data){
+            console.log(data.value);
+        }
+    })
 })
