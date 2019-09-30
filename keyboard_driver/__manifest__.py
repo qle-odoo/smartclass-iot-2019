@@ -1,8 +1,8 @@
 {
     'name': 'pos_iot_exp',
-    'vesrion': '1.0',
+    'vesrion': '1.1',
     'sequence': 0,
-    'summary': '',
+    'summary': 'Odoo XP IOT demo',
     'description': 'Odoo IOT config',
     'depends': ['pos_iot'],
     'data': [
