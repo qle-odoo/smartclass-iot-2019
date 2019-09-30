@@ -5,5 +5,5 @@
 	'sequence': 6,
 	'description': 'My 1st IOT driver',
 	'depends': ['pos_iot'],
-	'installable', True
+	'installable': True
 }
