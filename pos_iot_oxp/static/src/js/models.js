@@ -1,4 +1,4 @@
-odoo.define('pos_iot_oxp.models', function (requier) {
+odoo.define('pos_iot_oxp.models', function (requiere) {
     "use strict";
 
     var models = require("point_of_sale.models");
