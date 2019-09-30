@@ -7,8 +7,6 @@ class OXPKeyboardDriver(Driver):
         super(OXPKeyboardDriver, self).__init__(device)
         self._device_type = 'keyboard'
         self._device_connection = 'direct'
-        self._device_name = self._get_keyboard_name()
-        self._input_device = self._get_evdev_device()
 
     @classmethod
     def supported(cls, device):
