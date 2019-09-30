@@ -37,7 +37,7 @@ class OXPKeyboardDriver(Driver):
             if event.type == evdev.ecodes.EV_KEY:
                 data = evdev.categorize(event)
                 if data.keystate:
-                    self.data['value'] = data.keycode.reaplce('KEY_', '')
+                    self.data['value'] = data.keycode.replace('KEY_', '')
                     event_manager.device_changed(self)
                     
     def _get_keyboard_name(self):
