@@ -6,7 +6,7 @@ class OXPKeyboardDriver(Driver):
 	def __init__(self, device):
 		super(OXPKeyboardDriver, self).__init__(device)
 		self._device_type = "Keyboard"
-		self.device_connection = "direct"
+		self._device_connection = "direct"
 		self._device_name = "USB Keyboard"
 		
 	@classmethod
