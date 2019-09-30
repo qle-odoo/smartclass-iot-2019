@@ -20,10 +20,9 @@ class OXPKeyboardDriver(Driver):
                     return True
 
     def _get_evdev_device(self):
-      for path in reverse(evdev.list_devices()):
+      for path in reversed(evdev.list_devices()):
         device = evdev.InputDevice(path)
-        if self.dev.idVendor == device.info.vendor \
-          and self.dev.idProduct == device.info.product:
+        if self.dev.idVendor == device.info.vendor and self.dev.idProduct == device.info.product:
             return device
 
     def run(self):
