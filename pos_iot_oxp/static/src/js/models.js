@@ -37,25 +37,7 @@ models.PosModel = models.PosModel.extend({
         if (input) {
             input.dispatchEvent(new KeyboardEvent("keypress", {char: data.value}));
             if (data.value == "BACKSPACE") {
-                // input.value = input.value.slice(0, -1);
-
-                function() {
-                    var order = self.pos.get_order();
-                    var has_valid_product_lot = _.every(order.orderlines.models, function(line) {
-                        return line.has_valid_product_lot();
-                    });
-                    if (!has_valid_product_lot) {
-                        self.gui.show_popup('confirm', {
-                        'title': _t('Empty Serial/Lot Number'),
-                        'body': _t('One or more product(s) required serial/lot number.'),
-                        confirm: function() {
-                        self.gui.show_screen('payment');
-                      },
-                    });
-  } else {
-    self.gui.show_screen('payment');
-  }
-}
+                input.value = input.value.slice(0, -1);
             } else {
                 input.value += data.value;
             }
