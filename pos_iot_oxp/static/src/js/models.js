@@ -14,7 +14,7 @@ models.load_models({
         if (iot_devices) {
             var iot_device = iot_devices[0];
             self.keyboard = new DeviceProxy({
-                iot_ip: iot_device.identifier,
+                iot_ip: iot_device.iot_ip,
                 identifier: iot_device.identifier,
             });
         }
@@ -30,5 +30,18 @@ models.PosModel = models.PosModel.extend({
             self.iot_device_proxies.keyboard.add_listener(self._onKeyPressed.bind(self));
         });
     },
+
+    _onKeyPressed: function (data) {
+        var input = $('.searchbox input')[0];
+        if (input) {
+            input.dispatchEvent(new KeyboardEvent("keypress", {char : data.value}));
+            if (data.value == "BACKSPACE") {
+                input.value = input.value.slice(0,-1);
+            } else {
+                input.value += data.value;
+            }
+            input.dispatchEvent(new KeyboardEvent("keyup", {char : data.value}));
+        }
+    }
     });
 });
