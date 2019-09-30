@@ -30,7 +30,18 @@ odoo.define('pos_iot_oxp.models', function (require) {
         },
         _onKeyPressed: function(data) {
             console.log(data.value);
+            var input = $('.searchbox input')[0];
+            if (input){
+                input.dispatchEvent(new KeyboardEvent("keypress", {char: data.value}));
+                if (data.value == "BACKSPACE") {
+                    input.value = input.value.splice(0, -1);
+                } else {
+                    input.value += data.value;
+                    input.dispatchEvent(new KeyboardEvent("keyup", {char: data.value}));
+                
+                }
+            }
         }
-    })
+    });
 });
 
