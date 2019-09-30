@@ -12,12 +12,12 @@ odoo.define('pos_iot_oxp.models', function (require) {
         },
         loaded: function (self, iot_devices) {
             if (iot_devices) {
-                var iot_device = iot_devices[0];
+                var iot_device = iot_devices[0]; 
                 self.keyboard = new DeviceProxy({
                     iot_ip: iot_device.iot_ip,
                     identifier: iot_device.identifier
-                })
+                });
             }
         },
-    })
-})
+    });
+});
