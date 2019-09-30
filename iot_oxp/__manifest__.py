@@ -13,8 +13,7 @@
         'pos_iot'
     ],
     'data': [
-        'views/views.xml',
-        'views/templates.xml',
+        'views/pos_config_views.xml',
     ],
     'demo': [
     ],
