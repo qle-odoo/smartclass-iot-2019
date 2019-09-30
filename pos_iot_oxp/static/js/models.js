@@ -19,5 +19,4 @@ models.load_models({
         }
    },
  });
-
 });
