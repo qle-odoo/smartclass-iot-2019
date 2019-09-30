@@ -4,11 +4,7 @@
 
     'summary': '''Custom IoT App''',
 
-    'description': '''
-Custom IoT App
-=
-
-''',
+    'description': '''Custom IoT App''',
     'author': 'Odoo, Inc',
     'website': 'https://www.odoo.com',
     'category': 'IoT',
