@@ -7,10 +7,9 @@
         <field name="arch" type="xml">
             <xpath expr="//div[hasClass('pos_iot_config')]//div" position="before">
                 <div class="row">
-                    <label string="Keyboard" for="iot_keyboard_id" class="col-lg-4 o_light_lable"/>
+                    <label string="Keyboard" for="iot_keyboard_id" class="col-lg-4 o_light_label"/>
                     <field name="iot_keyboard_id"/>
                 </div>
-
             </xpath>
         </field>
     </record>
