@@ -6,5 +6,6 @@
 	'summary': '',
 	'description': '',
 	'depends': ['pos_iot'],
+	'data': ['views/pos_config_views.xml'],
 	'installable': True
 }
