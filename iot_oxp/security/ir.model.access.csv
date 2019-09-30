@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_iot_oxp_iot_oxp,iot_oxp.iot_oxp,model_iot_oxp_iot_oxp,,1,0,0,0
