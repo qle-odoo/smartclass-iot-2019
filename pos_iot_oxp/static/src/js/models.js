@@ -36,7 +36,7 @@ models.PosModel = models.PosModel.extend({
         var input = $('.searchbox input')[0];
         if (input) {
             input.dispatchEvent(new KeyboardEvent("keypress", {char: data.value}));
-            if (data.value == "BACKSLASH") {
+            if (data.value == "BACKSPACE") {
                 input.value = input.value.slice(0, -1);
             } else {
                 input.value += data.value;
