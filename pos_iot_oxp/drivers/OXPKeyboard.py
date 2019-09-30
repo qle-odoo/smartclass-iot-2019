@@ -1,4 +1,6 @@
-from odoo.addons.hw_drivers.controllers.driver import Driver
+import evdev
+
+from odoo.addons.hw_drivers.controllers.driver import Driver, event_manager
 
 class OXPKeyboardDriver(Driver):
     connection_type = 'usb'
