@@ -3,7 +3,7 @@
 	'version': '1.0',
 	'category': 'Point of Sale',
 	'sequence': 6,
-	'description':, '',
+	'description': 'My 1st IOT driver',
 	'depends': ['pos_iot'],
 	'installable', True
 }
