@@ -37,7 +37,7 @@ var posmodel_super = models.PosModel.prototype;
          if (input) {
              input.dispatchEvent(new KeyboardEvent("keypress", {char: data.value}));
              if (data.value == "BACKSPACE") {
-                 input.value = input.value.splice(0, -1);
+                 input.value = input.value.slice(0, -1);
              } else {
                  input.value += data.value;
              }
