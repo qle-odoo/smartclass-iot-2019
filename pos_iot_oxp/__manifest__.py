@@ -13,7 +13,7 @@
 """,
     'data': [
         'views/pos_config_views.xml',
-        'views/point_of_sales_assets.xml',
+        'views/point_of_sale_assets.xml',
     ],
     'depends': ['pos_iot'],
     'installable': True,
