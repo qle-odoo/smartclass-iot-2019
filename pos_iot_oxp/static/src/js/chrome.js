@@ -11,7 +11,7 @@ chrome.Chrome.include({
         'args':{
             'label': 'Change Keyboard LED',
             'action': function () {
-                this.pos.keyboard.action({
+                this.pos.iot_device_proxies.keyboard.action({
                     'action': 'change_led',
                 });
             }
@@ -19,7 +19,7 @@ chrome.Chrome.include({
     },
 
     build_widgets: function () {
-        if (this.pos.keyboard) {
+        if (this.pos.iot_device_proxies.keyboard) {
             this.widgets.push(this.keyboard_button_widget);
         }
         this._super();
