@@ -10,7 +10,14 @@
                     <label string="Keyboard" 
                         for="iot_keyboard_id" class="col-lg-4 o_light_label"/>
                     <field name="iot_keyboard_id"/>
+
                 </div>
+                <div class="row">
+                    <label string="IPCamera" 
+                        for="iot_ipcamera_id" class="col-lg-4 o_light_label"/>
+                    <field name="iot_ipcamera_id"/>
+                    
+                </div>                
             </xpath>
         </field>
     </record>
