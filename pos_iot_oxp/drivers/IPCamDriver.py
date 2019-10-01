@@ -54,6 +54,10 @@ class IPCamDriver(Driver):
     def supported(cls, device):
         return True
 
+    @property
+    def device_identifier(self):
+        return self.dev['identifier']
+
     def action(self, data):
         try:
             """
