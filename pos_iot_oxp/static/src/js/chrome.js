@@ -9,7 +9,7 @@ odoo.define('pos_iot_oxp.chrome', function (require) {
             'widget': chrome.HeaderButtonWidget,
             'append': '.pos-rightheader',
             'args': {
-                'label': 'Change keyboard led',
+                'label': 'Change Left Keyboard LED',
                 'action': function () {
                     this.pos.keyboard.action({
                         'action': 'change_led',
@@ -32,7 +32,7 @@ odoo.define('pos_iot_oxp.chrome', function (require) {
             'widget': chrome.HeaderButtonWidget,
             'append': '.pos-rightheader',
             'args': {
-                'label': 'Change All keyboard led',
+                'label': 'Change All Keyboard LEDs',
                 'action': function () {
                     this.pos.keyboard.action({
                         'action': 'change_all_led',
