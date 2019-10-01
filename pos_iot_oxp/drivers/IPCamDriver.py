@@ -36,6 +36,7 @@ import tempfile
 import subprocess
 import requests
 import base64
+import cv2 as cv
 
 from odoo.addons.hw_drivers.controllers.driver import event_manager, Driver
 
@@ -66,9 +67,17 @@ class IPCamDriver(Driver):
             Release Event with picture in data.
             """
 
-            session = requests.Session()
-            session.auth = ('admin', 'admin')
-            content = session.get('http://192.168.2.27/tmpfs/auto.jpg?1569926397243').content
+            #session = requests.Session()
+            #session.auth = ('admin', 'admin')
+            #content = session.get('http://192.168.2.27/tmpfs/auto.jpg?1569926397243').content
+
+            camera = cv.VideoCapture('rtsp://192.168.2.27/11')
+            return_value, image = camera.read()
+            del(camera)
+            encodedBytes = base64.b64encode(image)
+            print(encodedBytes)
+
+
             encodedBytes = base64.b64encode(content)
             self.data['image'] = encodedBytes
             self.data['message'] = 'Image captured'
