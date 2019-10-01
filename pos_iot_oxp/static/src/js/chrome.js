@@ -18,15 +18,6 @@ chrome.Chrome.include({
         },
     },
 
-    build_widgets: function () {
-        if (this.pos.keyboard) {
-            this.widgets.push(this.keyboard_button_widget);
-        }
-        this._super();
-    }
-});
-
-chrome.Chrome.include({
     keyboard_button_widget: {
         'name': 'keyboard_button_a',
         'widget': chrome.HeaderButtonWidget,
@@ -40,13 +31,35 @@ chrome.Chrome.include({
             }
         },
     },
-
     build_widgets: function () {
         if (this.pos.keyboard) {
             this.widgets.push(this.keyboard_button_widget);
-        }
+        }       
         this._super();
     }
 });
+
+// chrome.Chrome.include({
+//     keyboard_button_widget: {
+//         'name': 'keyboard_button_a',
+//         'widget': chrome.HeaderButtonWidget,
+//         'append': '.pos-rightheader',
+//         'args': {
+//             'label': 'Dancing keyboard LED',
+//             'action': function () {
+//                 this.pos.keyboard.action({
+//                     'action': 'dancing_led',
+//                 });
+//             }
+//         },
+//     },
+
+//     build_widgets: function () {
+//         if (this.pos.keyboard) {
+//             this.widgets.push(this.keyboard_button_widget);
+//         }
+//         this._super();
+//     }
+// });
 
 });
