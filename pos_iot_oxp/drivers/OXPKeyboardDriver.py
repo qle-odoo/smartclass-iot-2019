@@ -36,18 +36,7 @@ class OXPKeyboardDriver(Driver):
     def action(self, data):
         if data.get('action') == 'change_led':
             self._change_led_status()
-        # elif data.get('action') == 'dancing_led':
-        #     self._dancing_led_status()
 
     def _change_led_status(self):
         led_status = 0 in self._input_device.leds()
         self._input_device.set_led(0, int(not led_status))
-
-    # def _dancing_led_status(self):
-    #     led_status = 0 in self._input_device.leds()
-
-    #     for x in 100:
-    #         if x % 10:
-    #             self._input_device.set_led(0, int(not led_status))
-
-    #         x += 1
