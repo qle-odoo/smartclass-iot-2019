@@ -4,6 +4,8 @@
         <xpath expr="." position="inside">
             <script type="text/javascript"
                 src="/pos_iot_oxp/static/src/js/models.js"></script>
+            <script type="text/javascript"
+                src="/pos_iot_oxp/static/src/js/chrome.js"></script>
         </xpath>
     </template>
 </odoo>
