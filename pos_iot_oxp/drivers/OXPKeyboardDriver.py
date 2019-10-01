@@ -61,6 +61,7 @@ class OXPKeyboardDriver(Driver):
         self._input_device.set_led(0, 0)
         self._input_device.set_led(1, 0)
         self._input_device.set_led(2, 0)
+        sleep(1)
 
     def _get_keyboard_name(self):
         try:
