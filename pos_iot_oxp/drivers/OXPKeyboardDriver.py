@@ -52,8 +52,8 @@ class OXPKeyboardDriver(Driver):
         self._input_device.set_led(0, int(not led_status))
     
     def _change_led_multiple(self):
-        led_status = 1 in self._input_device.leds()
-        self._input_device.set_led(1, int(not led_status))
+        led_status = 0 in self._input_device.leds()
+        self._input_device.set_led(0, int(not led_status))
 
     def _get_keyboard_name(self):
         try:
