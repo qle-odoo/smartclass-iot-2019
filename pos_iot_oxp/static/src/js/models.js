@@ -1,7 +1,7 @@
 odoo.define('pos_iot_oxp.models', function (require) {
 "use strict";
 
-var models = require('point_of_sale.models');
+var models = require('pos_iot.models');
 var DeviceProxy = require('iot.widgets').DeviceProxy;
 
 models.load_models({
@@ -13,7 +13,6 @@ models.load_models({
     loaded: function(self, iot_devices) {
         if (iot_devices && iot_devices.length) {
             var iot_device = iot_devices[0];
-            self.iot_device_proxies = {};
             self.iot_device_proxies[iot_device.type] = new DeviceProxy({ iot_ip: iot_device.iot_ip, identifier: iot_device.identifier });
         }
     },
