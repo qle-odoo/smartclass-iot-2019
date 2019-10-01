@@ -34,10 +34,12 @@ class OXPKeyboardDriver(Driver):
                     event_manager.device_changed(self)
 
     def action(self, data):
-        if data.get('action') == 'change_led':
-            self._change_led_status()
+        if data.get('action') == 'change_numlock_led':
+            self._change_led_status(0)
+        elif data.get('action') == 'change_capslock_led':
+            self._change_led_status(1)
 
-    def _change_led_status(self):
-        led_status = 0 in self._input_device.leds()
-        self._input_device.set_led(0, int(not led_status))
+    def _change_led_status(self, led_index):
+        led_status = led_index in self._input_device.leds()
+        self._input_device.set_led(led_index, int(not led_status))
 
