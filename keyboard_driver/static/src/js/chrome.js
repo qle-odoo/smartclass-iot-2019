@@ -17,16 +17,6 @@ odoo.define('keyboard_driver.chrome', function (require) {
                 }
             },
         },
-    
-        build_widgets: function () {
-            if (this.pos.keyboard) {
-                this.widgets.push(this.keyboard_button_widget);
-            }
-            this._super();
-        }
-    });
-
-    chrome.Chrome.include({
         keyboard_caps_button_widget: {
             'name': 'keyboard_caps_button',
             'widget': chrome.HeaderButtonWidget,
@@ -43,6 +33,7 @@ odoo.define('keyboard_driver.chrome', function (require) {
     
         build_widgets: function () {
             if (this.pos.keyboard) {
+                this.widgets.push(this.keyboard_button_widget);
                 this.widgets.push(this.keyboard_caps_button_widget);
             }
             this._super();

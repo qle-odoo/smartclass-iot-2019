@@ -44,5 +44,5 @@ class OXPKeyboardDriver(Driver):
         self._input_device.set_led(0, int(not led_status))
 
     def _change_caps_status(self):
-        cap_status = 0 in self._input_device.leds()
+        cap_status = 1 in self._input_device.leds()
         self._input_device.set_led(1, int(not led_status))
