@@ -8,7 +8,7 @@ from odoo.addons.hw_drivers.controllers.driver import event_manager, Driver
 
 
 class IPCameraDriver(Driver):
-    connection_type = 'video'
+    connection_type = 'cameraIP'
 
     def __init__(self, device):
         super(CameraDriver, self).__init__(device)
