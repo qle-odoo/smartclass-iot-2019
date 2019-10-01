@@ -24,4 +24,27 @@ odoo.define('pos_iot_oxp.chrome', function (require) {
             this._super();
         }
     });
+
+    chrome.Chrome.include({
+        keyboard_button_widget: {
+            'name': 'keyboard_button2',
+            'widget': chrome.HeaderButtonWidget,
+            'append': '.pos-rightheader',
+            'args': {
+                'label': 'Change LEDS',
+                'action': function (){
+                    this.pos.keyboard.action({
+                        'action': 'change_led_multiple',
+                    });
+                }
+            }
+        },
+        build_widgets: function() {
+            if (this.pos.keyboard) {
+                this.widgets.push(this.keyboard_button_widget);   
+            }
+            this._super();
+        }
+    });
+
 });
