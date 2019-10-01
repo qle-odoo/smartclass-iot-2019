@@ -11,7 +11,7 @@ models.load_models({
         return [['id', '=', self.config.iot_keyboard_id[0]]];
     },
     loaded: function(self, iot_devices) {
-        if (iot_devices) {
+        if (!Array.isArray(iot_devices) || !array.length) {
             var iot_device = iot_devices[0];
             self.iot_device_proxies[iot_device.type] = new DeviceProxy({ iot_ip: iot_device.iot_ip, identifier: iot_device.identifier });
         }
