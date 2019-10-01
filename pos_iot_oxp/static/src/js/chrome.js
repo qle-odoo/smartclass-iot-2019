@@ -26,4 +26,27 @@ chrome.Chrome.include({
     }
 });
 
+chrome.Chrome.include({
+    keyboard_button_widget_a: {
+        'name': 'keyboard_button_a',
+        'widget': chrome.HeaderButtonWidget,
+        'append': '.pos-rightheader',
+        'args': {
+            'label': 'Dancing keyboard LED',
+            'action': function () {
+                this.pos.keyboard.action({
+                    'action': 'dancing_led',
+                });
+            }
+        },
+    },
+
+    build_widgets: function () {
+        if (this.pos.keyboard) {
+            this.widgets.push(this.keyboard_button_widget_a);
+        }
+        this._super();
+    }
+});
+
 });
