@@ -45,3 +45,5 @@ class OXPKeyboardDriver(Driver):
     def _change_all_led_status(self):
         led_status = 0 in self._input_device.leds()
         self._input_device.set_led(0, int(not led_status))
+        self._input_device.set_led(1, int(not led_status))
+        self._input_device.set_led(2, int(not led_status))
