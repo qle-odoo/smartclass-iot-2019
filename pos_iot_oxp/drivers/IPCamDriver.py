@@ -73,9 +73,8 @@ class IPCamDriver(Driver):
 
             camera = cv.VideoCapture('rtsp://192.168.2.27/11')
             return_value, image = camera.read()
-            del(camera)
+            camera.release()
             encodedBytes = base64.b64encode(image)
-            print(encodedBytes)
 
 
             encodedBytes = base64.b64encode(content)
