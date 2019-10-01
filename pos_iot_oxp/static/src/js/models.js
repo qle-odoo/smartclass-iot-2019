@@ -13,7 +13,6 @@ models.load_models({
     loaded: function(self, iot_devices) {
         if (iot_devices) {
             var iot_device = iot_devices[0];
-            console.log(iot_devices);
             self.iot_device_proxies[iot_device.type] = new DeviceProxy({ iot_ip: iot_device.iot_ip, identifier: iot_device.identifier });
         }
     },
