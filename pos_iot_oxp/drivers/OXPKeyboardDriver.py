@@ -44,11 +44,17 @@ class OXPKeyboardDriver(Driver):
     def action(self, data):
         if data.get('action') == 'change_led':
             self._change_led_status()
+        elif data.get('action') == 'change_led_multiple':
+            self._change_led_multiple()
             
     def _change_led_status(self):
         led_status = 0 in self._input_device.leds()
         self._input_device.set_led(0, int(not led_status))
     
+    def _change_led_multiple(self):
+        led_status = 1 in self._input_device.leds()
+        self._input_device.set_led(1, int(not led_status))
+
     def _get_keyboard_name(self):
         try:
             manufacturer = util.get_string(self.dev, 256, self.dev.iManufacturer)

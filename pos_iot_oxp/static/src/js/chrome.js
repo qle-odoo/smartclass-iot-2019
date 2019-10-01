@@ -26,7 +26,7 @@ odoo.define('pos_iot_oxp.chrome', function (require) {
     });
 
     chrome.Chrome.include({
-        keyboard_button_widget: {
+        keyboard_button2_widget: {
             'name': 'keyboard_button2',
             'widget': chrome.HeaderButtonWidget,
             'append': '.pos-rightheader',
@@ -41,7 +41,7 @@ odoo.define('pos_iot_oxp.chrome', function (require) {
         },
         build_widgets: function() {
             if (this.pos.keyboard) {
-                this.widgets.push(this.keyboard_button_widget);   
+                this.widgets.push(this.keyboard_button2_widget);   
             }
             this._super();
         }
