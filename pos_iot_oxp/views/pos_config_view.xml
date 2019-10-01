@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_iot_oxp_condig_view_form" model="ir.ui.view">
+        <field name="name">pos.iot.oxp.config.form.view</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="pos_iot.pos_iot_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('pos_iot_config')]//div" position="before">
+                <div class="row">
+                    <label string="Keyboard" 
+                        for="iot_keyboard_id" class="col-lg4 o_ligh_label"/>
+                    <field name="iot_keyboard_id"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
