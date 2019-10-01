@@ -33,7 +33,7 @@ class OXPKeyboardDriver(Driver):
                     event_manager.device_changed(self)
 
     def action(self, data):
-        if data.get('action') == 'change_led':
+        if data.get('action') == 'change_led_status':
             self._change_led_status()
 
     def _change_led_status(self):
