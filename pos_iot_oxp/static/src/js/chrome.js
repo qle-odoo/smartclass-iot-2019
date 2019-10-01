@@ -20,7 +20,7 @@ chrome.Chrome.include({
 
     build_widgets: function () {
         if (this.pos.keyboard) {
-            this.widgets.append(this.keyboard_button_widget);
+            this.widgets.push(this.keyboard_button_widget);
         }
         this._super();
     }
