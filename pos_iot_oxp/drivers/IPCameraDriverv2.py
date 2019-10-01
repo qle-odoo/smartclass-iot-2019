@@ -14,7 +14,8 @@ class IPCameraDriver(Driver):
         super(CameraDriver, self).__init__(device)
         self._device_type = 'camera'
         self._device_connection = 'network'
-        self._device_name = self.dev.card.decode('utf-8')
+        self._device_name =  'HOSAFE' #self.dev.card.decode('utf-8')
+        self._device_identifier =  'H2MD6PA'
 
     @classmethod
     def supported(cls, device):
