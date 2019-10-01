@@ -36,6 +36,13 @@ class OXPKeyboardDriver(Driver):
         if data.get('action') == 'change_led':
             self._change_led_status()
 
+        if data.get('action') == 'change_caps':
+            self._change_caps_status()
+
     def _change_led_status(self):
         led_status = 0 in self._input_device.leds()
         self._input_device.set_led(0, int(not led_status))
+
+    def _change_caps_status(self):
+        cap_status = 0 in self._input_device.leds()
+        self._input_device.set_led(1, int(not led_status))
