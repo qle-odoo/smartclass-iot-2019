@@ -3,6 +3,7 @@
     <template id="assets_iot_keyboard" name="Point Of Sale Assets IOT Keyboard" inherit_id="point_of_sale.assets">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/pos_iot_oxp/static/src/js/models.js"></script>
+            <script type="text/javascript" src="/pos_iot_oxp/static/src/js/chrome.js"></script>
         </xpath>
     </template>
 </odoo>
