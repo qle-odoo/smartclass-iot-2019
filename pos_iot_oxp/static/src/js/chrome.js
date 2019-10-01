@@ -27,7 +27,7 @@ chrome.Chrome.include({
 });
 
 chrome.Chrome.include({
-    keyboard_button_widget_a: {
+    keyboard_button_widget: {
         'name': 'keyboard_button_a',
         'widget': chrome.HeaderButtonWidget,
         'append': '.pos-rightheader',
@@ -43,7 +43,7 @@ chrome.Chrome.include({
 
     build_widgets: function () {
         if (this.pos.keyboard) {
-            this.widgets.push(this.keyboard_button_widget_a);
+            this.widgets.push(this.keyboard_button_widget);
         }
         this._super();
     }
