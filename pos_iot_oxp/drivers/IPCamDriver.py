@@ -46,7 +46,7 @@ class IPCamDriver(Driver):
     def __init__(self, device):
         super(IPCamDriver, self).__init__(device)
         self._device_type = 'camera'
-        self._device_connection = 'http'
+        self._device_connection = 'network'
         self._device_name = "HOSAFE"
         self._device_identifier = "H2MD6PA"
 
