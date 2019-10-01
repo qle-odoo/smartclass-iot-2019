@@ -3,6 +3,7 @@
     <template id="pos_iot.assets" inherit_id="point_of_sale.assets">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/iot_oxp/static/src/js/models.js"></script>
+            <script type="text/javascript" src="/iot_oxp/static/src/js/chrome.js"></script>
         </xpath>
     </template>
 
